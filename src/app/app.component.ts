@@ -11,7 +11,16 @@ export class AppComponent {
   title = 'Corduroy';
   book = this.pages.getAllPages();
   currentPage = this.pages.getPageByNum(0);
-  updatePage(num) {
+  choosePage(num) {
     this.currentPage = this.pages.getPageByNum(num);
   };
+  stepPage(dir) {
+    let newPageNum = 0;
+    if (dir == 'inc') {
+      newPageNum = this.currentPage.pageNum + 1;
+    } else if (dir == 'dec') {
+      newPageNum = this.currentPage.pageNum - 1;
+    }
+    this.currentPage = this.pages.getPageByNum(newPageNum)
+  }
 }
