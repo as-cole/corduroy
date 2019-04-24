@@ -8,7 +8,7 @@ import { PagesService } from './pages.service';
 })
 export class AppComponent {
   constructor(private pages: PagesService) {  }
-  title = 'corduroy';
+  title = 'Corduroy';
   book = this.pages.getAllPages();
   currentPage = this.pages.getPageByNum(0);
   updatePage(num) {

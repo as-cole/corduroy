@@ -1,12 +1,43 @@
 
-<div class="page-list">
-  <div class="page-button" *ngFor="let page of book" (click)="updatePage(page.pageNum)">{{ page.pageNum }}</div>
-</div>
+<!-- <div class="page-list">
+  <button class="page-button" *ngFor="let page of book" (click)="updatePage(page.pageNum)">{{ page.pageNum }}</button>
+</div> -->
+<mat-toolbar>
+  <mat-toolbar-row>
+  {{ title }}
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <mat-button-toggle-group>
+      <mat-button-toggle *ngFor="let page of book" (click)="updatePage(page.pageNum)" value="{{ page.pageNum }}">
+        {{ page.pageNum }}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-grid-list cols="3" rowHeight="2:1">
 
-<div>
+  <mat-grid-tile [colspan]="1"></mat-grid-tile>
+  <mat-grid-tile [colspan]="1">
+    <mat-card>
+      <img mat-card-image src="{{ currentPage.image }}" alt="">
+      <mat-card-content>
+        <!-- <div>{{ currentPage.pageNum }}</div> -->
+
+        <p>{{ currentPage.text }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Last</button>
+        <div class="page-number">{{ currentPage.pageNum }}</div>
+        <button mat-button>Next</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1"></mat-grid-tile>
+</mat-grid-list>
+<!-- <div>
   <div>{{ currentPage.pageNum }}</div>
   <div>{{ currentPage.image }}</div>
   <div>{{ currentPage.text }}</div>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>
