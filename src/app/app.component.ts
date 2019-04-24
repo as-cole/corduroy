@@ -10,6 +10,8 @@ export class AppComponent {
   constructor(private pages: PagesService) {  }
   title = 'corduroy';
   book = this.pages.getAllPages();
-  currentPage = this.pages.getPageByNum(2);
-  test = console.log(this.currentPage);
+  currentPage = this.pages.getPageByNum(0);
+  updatePage(num) {
+    this.currentPage = this.pages.getPageByNum(num);
+  };
 }
