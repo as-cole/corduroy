@@ -1,29 +1,17 @@
-
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-  {{ title }}
+  {{ pages.title }}
   </mat-toolbar-row>
   <mat-toolbar-row>
     <mat-button-toggle-group color="secondary">
       <!-- TODO: mat-button-toggle doesn't update with currentPage - might be able to use ngModel  -->
-      <mat-button-toggle *ngFor="let page of book" (click)="choosePage(page.pageNum)" value="{{ page.pageNum }}">
+      <mat-button-toggle *ngFor="let page of pages.pages" (click)="choosePage(page.pageNum)" value="{{ page.pageNum }}">
         {{ page.pageNum }}
       </mat-button-toggle>
     </mat-button-toggle-group>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div class="column">
-  <div class="row">
-    <img src="{{ currentPage.image }}" alt="">
-  </div>
-  <div class="row">
-    <p>{{ currentPage.text }}</p>
-  </div>
-  <div class="row">
-    <button mat-button (click)="stepPage('dec')">Last</button>
-    <div class="page-number">{{ currentPage.pageNum }}</div>
-    <button mat-button (click)="stepPage('inc')">Next</button>
-  </div>
-</div>
+<app-page></app-page>
+
 <router-outlet></router-outlet>

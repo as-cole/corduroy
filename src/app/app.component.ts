@@ -8,19 +8,8 @@ import { PagesService } from './pages.service';
 })
 export class AppComponent {
   constructor(private pages: PagesService) {  }
-  title = 'Corduroy';
-  book = this.pages.getAllPages();
-  currentPage = this.pages.getPageByNum(0);
+  
   choosePage(num) {
-    this.currentPage = this.pages.getPageByNum(num);
+    this.pages.currentPage = this.pages.getPageByNum(num);
   };
-  stepPage(dir) {
-    let newPageNum = 0;
-    if (dir == 'inc') {
-      newPageNum = this.currentPage.pageNum + 1;
-    } else if (dir == 'dec') {
-      newPageNum = this.currentPage.pageNum - 1;
-    }
-    this.currentPage = this.pages.getPageByNum(newPageNum)
-  }
 }

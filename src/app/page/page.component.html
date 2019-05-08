@@ -1,0 +1,13 @@
+<div class="column">
+  <div class="row">
+    <img src="{{ pages.currentPage.image }}" alt="">
+  </div>
+  <div class="row">
+    <p>{{ pages.currentPage.text }}</p>
+  </div>
+  <div class="row">
+    <button mat-button (click)="stepPage('dec')">Last</button>
+    <div class="page-number">{{ pages.currentPage.pageNum }}</div>
+    <button mat-button (click)="stepPage('inc')">Next</button>
+  </div>
+</div>

@@ -8,12 +8,14 @@ import { PagesService } from './pages.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule, MatButtonModule, MatButtonToggleModule, MatGridListModule, MatToolbarModule} from '@angular/material';
+import { PageComponent } from './page/page.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,
