@@ -12,7 +12,7 @@ export class PagesService {
     {
       pageNum: 0, // title page
       image: `../assets/img/Cord_title.jpg`,
-      text: `Corduroy`
+      text: `Corduroy - Story and Pictures by Don Freeman`
     },
     {
       pageNum: 1,
