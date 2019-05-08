@@ -1,13 +1,17 @@
-<div class="column">
-  <div class="row">
-    <img src="{{ pages.currentPage.image }}" alt="">
+<div class="row fullwidth">
+  <div class="column page-gutter background-primary"></div>
+  <div class="column page-main background-white">
+    <div class="row img-container margin-40">
+      <img src="{{ pages.currentPage.image }}" alt="{{ 'page number ' + pages.currentPage.pageNum }}">
+    </div>
+    <div class="row padding-10 background-white page-main-content">
+      <p>{{ pages.currentPage.text }}</p>
+    </div>
+    <div class="row page-main-actions padding-10 background-white">
+      <button mat-raised-button (click)="stepPage('dec')" color="primary">Last</button>
+      <div class="page-number">{{ pages.currentPage.pageNum }}</div>
+      <button mat-raised-button (click)="stepPage('inc')" color="primary">Next</button>
+    </div>
   </div>
-  <div class="row">
-    <p>{{ pages.currentPage.text }}</p>
-  </div>
-  <div class="row">
-    <button mat-button (click)="stepPage('dec')">Last</button>
-    <div class="page-number">{{ pages.currentPage.pageNum }}</div>
-    <button mat-button (click)="stepPage('inc')">Next</button>
-  </div>
+  <div class="column page-gutter background-primary"></div>
 </div>

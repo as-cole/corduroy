@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/purple-green.css";
+@import '~@angular/material/theming';
+
+$primary: mat-palette($mat-purple,700);
 
 html {
   font-family: Roboto,"Helvetica Neue",sans-serif;
@@ -16,5 +19,29 @@ html {
   .column {
     display: flex;
     flex-direction: column;
+  }
+
+  .fullwidth {
+    width: 100%;
+  }
+
+  .padding-10 {
+    padding: 10px;
+  }
+
+  .margin-10 {
+    margin: 10px;
+  }
+
+  .margin-40 {
+    margin: 40px;
+  }
+
+  .background-primary {
+    background-color: mat-color($primary);
+  }
+
+  .background-white {
+    background-color: white;
   }
 }

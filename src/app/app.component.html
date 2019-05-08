@@ -1,16 +1,16 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary" class="fullwidth">
   <mat-toolbar-row>
   {{ pages.title }}
-  </mat-toolbar-row>
-  <mat-toolbar-row>
-    <mat-button-toggle-group color="secondary">
+  </mat-toolbar-row> -->
+  <!-- <mat-toolbar-row>
+    <mat-button-toggle-group color="secondary"> -->
       <!-- TODO: mat-button-toggle doesn't update with currentPage - might be able to use ngModel  -->
-      <mat-button-toggle *ngFor="let page of pages.pages" (click)="choosePage(page.pageNum)" value="{{ page.pageNum }}">
+      <!-- <mat-button-toggle *ngFor="let page of pages.pages" (click)="choosePage(page.pageNum)" value="{{ page.pageNum }}">
         {{ page.pageNum }}
       </mat-button-toggle>
     </mat-button-toggle-group>
-  </mat-toolbar-row>
-</mat-toolbar>
+  </mat-toolbar-row> -->
+<!-- </mat-toolbar> -->
 
 <app-page></app-page>
 
