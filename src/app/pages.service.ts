@@ -7,6 +7,8 @@ export class PagesService {
 
   constructor() {  }
   title = 'Corduroy';
+  next = false;
+  prev = true;
 
   pages = [
     {
@@ -162,6 +164,33 @@ export class PagesService {
 
   getPageByNum(num) {
     return this.pages.find(el => el.pageNum == num);
+  }
+
+  stepPage(dir) {
+    let newPageNum = 0;
+    let totalPages = this.pages.length;
+    if (dir == 'inc') {
+      newPageNum = this.currentPage.pageNum + 1;
+    } else if (dir == 'dec') {
+      newPageNum = this.currentPage.pageNum - 1;
+    }
+    this.currentPage = this.getPageByNum(newPageNum)
+    this.updateNavigation();
+  };
+
+  updateNavigation() {
+    if (this.currentPage.pageNum === 0) {
+      this.prev = true;
+    } else {
+      this.prev = false;
+    };
+
+    if (this.currentPage.pageNum === 28) {
+      this.next = true;
+    } else {
+      this.next = false;
+    };
+
   }
 
   currentPage = this.getPageByNum(0);

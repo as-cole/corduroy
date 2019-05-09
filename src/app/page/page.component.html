@@ -8,9 +8,9 @@
       <p>{{ pages.currentPage.text }}</p>
     </div>
     <div class="row page-main-actions padding-10 background-white">
-      <button mat-raised-button (click)="stepPage('dec')" color="primary">Last</button>
+      <button mat-raised-button (click)="pages.stepPage('dec')" color="primary" [disabled]="pages.prev">Prev</button>
       <div class="page-number">{{ pages.currentPage.pageNum }}</div>
-      <button mat-raised-button (click)="stepPage('inc')" color="primary">Next</button>
+      <button mat-raised-button (click)="pages.stepPage('inc')" color="primary" [disabled]="pages.next">Next</button>
     </div>
   </div>
   <div class="column page-gutter background-primary"></div>
